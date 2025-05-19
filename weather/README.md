@@ -56,13 +56,8 @@ Claude Desktop에서 MCP 서버를 등록하고 사용할 수 있습니다:
 
 ### 응답 예시
 
-```
-기온: 15.0°C
-하늘상태: 맑음
-강수형태: 없음
-습도: 60%
-1시간 강수량: 강수없음
-```
+![Claude Desktop에서 날씨 정보 요청 예시](images/claude_desktop.png)
+
 
 ## 기술 스택
 
