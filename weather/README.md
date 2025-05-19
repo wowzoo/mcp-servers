@@ -50,8 +50,9 @@ Claude Desktop에서 MCP 서버를 등록하고 사용할 수 있습니다:
     }
   }
 }
-   - Claude Desktop 을 다시 시작합니다.
 ```
+   - Claude Desktop 을 다시 시작합니다.
+
 
 ### 응답 예시
 
