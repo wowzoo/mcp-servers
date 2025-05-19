@@ -33,16 +33,24 @@ API_SECRET = '발급받은 API 키를 여기에 입력하세요'
 
 ### Claude Desktop에서 사용하기
 
-1. MCP 서버를 실행합니다:
-```bash
-python weather.py
+Claude Desktop에서 MCP 서버를 등록하고 사용할 수 있습니다:
+   - Claude Desktop 의 Settings 에서 Developer 섹션으로 이동
+   - Edit Config 를 선택하여 claude_desktop_config.json 파일을 열어서 편집합니다.
+```json
+{
+  "mcpServers": {
+    "weather": {
+      "command": "uv 의 절대경로 입력",
+      "args": [
+        "--directory",
+        "weather.py 가 위치한 디렉토리의 절대경로 입력",
+        "run",
+        "weather.py"
+      ]
+    }
+  }
+}
 ```
-
-2. Claude Desktop에서 MCP 서버를 등록하고 사용할 수 있습니다:
-   - Claude Desktop 설정에서 MCP 서버 섹션으로 이동
-   - 새 MCP 서버 추가 선택
-   - 서버 이름과 경로 입력
-   - 대화창에서 날씨 정보 요청 가능
 
 ### 응답 예시
 
