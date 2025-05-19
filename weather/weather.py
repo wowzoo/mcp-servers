@@ -14,7 +14,7 @@ API_URL = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtF
 # 단기예보
 # API_URL = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'
 
-API_SECRET = 'xxxxxxx'
+API_SECRET = '발급받은 API 키를 여기에 입력하세요'
 
 
 def mapToGrid(lat, lon) -> tuple[int, int]:
