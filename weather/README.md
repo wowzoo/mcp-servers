@@ -54,6 +54,9 @@ Claude Desktop에서 MCP 서버를 등록하고 사용할 수 있습니다:
    - Claude Desktop 을 다시 시작합니다.
 
 
+### 응답 예시
+
+<img src="images/claude_desktop.png" alt="Claude Desktop에서 날씨 정보 요청 예시" width="600">
 
 
 ## 기술 스택
