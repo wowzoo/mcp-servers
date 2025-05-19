@@ -12,24 +12,3 @@ Model Context Protocol(MCP) 서버 모음입니다. 이 저장소는 Claude와 �
 - 기온, 하늘상태, 강수형태, 습도, 1시간 강수량 등 상세 정보 제공
 
 [자세한 정보](./weather/README.md)
-
-## 설치 및 사용 방법
-
-각 서버 디렉토리에 있는 README.md 파일을 참조하세요.
-
-## 요구 사항
-
-- Python 3.13 이상
-- [uv 패키지 매니저](https://docs.astral.sh/uv/getting-started/installation/)
-
-## 라이선스
-
-[MIT 라이선스](./LICENSE)에 따라 배포됩니다.
-
-## 기여 방법
-
-1. 이 저장소를 포크합니다.
-2. 새로운 브랜치를 생성합니다.
-3. 변경사항을 커밋합니다.
-4. 브랜치를 푸시합니다.
-5. Pull Request를 생성합니다.
