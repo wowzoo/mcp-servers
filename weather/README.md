@@ -25,7 +25,7 @@ uv sync
 
 1. [공공데이터포털](https://www.data.go.kr)에 회원가입 후 기상청 초단기예보 API 키를 발급받아야 합니다.
 
-마이페이지에서 개인 API인증키에서 <b>인증키 복사(Decoding)</b>을 클릭하여 API 키를 받아옵니다.
+마이페이지 -> 개인 API인증키에서 <b>인증키 복사(Decoding)</b>을 클릭하여 API 키를 받아옵니다.
 <img src="images/api_key.png" alt="API Key 발급 방법" width="600">
 
 2. 발급받은 API 키를 `weather.py` 파일의 `API_SECRET` 변수에 설정합니다.
