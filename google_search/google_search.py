@@ -19,8 +19,8 @@ logger = logging.getLogger("google-search-mcp")
 app = FastMCP("google-search-mcp")
 
 # Google Custom Search API 설정
-API_KEY = "AIzaSyABFthCGv5tfOKTuBd68gTZP1uFR0JRu40"
-SEARCH_ENGINE_ID = "5183cef5d88d443d9"
+API_KEY = "YOUR_API_KEY_HERE"
+SEARCH_ENGINE_ID = "YOUR_SEARCH_ENGINE_ID_HERE"
 
 class GoogleSearcher:
     """Google Custom Search API를 사용한 검색 클래스"""
