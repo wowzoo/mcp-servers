@@ -1,5 +1,6 @@
 import math
 import httpx
+import os
 
 from mcp.server.fastmcp import FastMCP
 from zoneinfo import ZoneInfo
@@ -14,7 +15,7 @@ API_URL = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtF
 # 단기예보
 # API_URL = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'
 
-API_SECRET = '발급받은 API 키를 여기에 입력하세요'
+API_SECRET = os.environ.get('PUBLIC_DATA_API_SECRET')
 
 
 def mapToGrid(lat, lon) -> tuple[int, int]:
@@ -160,10 +161,7 @@ async def get_forecast(latitude: float, longitude: float) -> str:
     elif data['PTY'] == '7':
         pty = '눈날림'
 
-    if data['RN1'] == '강수없음':
-        rn1 = '강수없음'
-    else:
-        rn1 = f"{data['RN1']}mm"
+    rn1 = '강수없음' if data['RN1'] == '강수없음' else f"{data['RN1']}mm"
 
     forecast = f"""
 기온: {data['T1H']}°C
@@ -171,8 +169,8 @@ async def get_forecast(latitude: float, longitude: float) -> str:
 강수형태: {pty}
 습도: {data['REH']}%
 1시간 강수량: {rn1}
+풍속: {data['WSD']}m/s
 """
-    # print(forecast)
 
     return forecast
 

@@ -28,10 +28,31 @@ uv sync
 마이페이지 -> 개인 API인증키에서 <b>인증키 복사(Decoding)</b>을 클릭하여 API 키를 받아옵니다.
 <img src="images/api_key.png" alt="API Key 발급 방법" width="600">
 
-2. 발급받은 API 키를 `weather.py` 파일의 `API_SECRET` 변수에 설정합니다.
+2. 발급받은 API 키를 환경변수로 설정합니다.
 
-```python
-API_SECRET = '발급받은 API 키를 여기에 입력하세요'
+#### 방법 1: 터미널에서 직접 설정 (임시)
+터미널에서 다음 명령어를 실행합니다:
+```bash
+export PUBLIC_DATA_API_SECRET="발급받은_API_키를_여기에_입력"
+```
+이 방법은 현재 터미널 세션에서만 유효하며, 터미널을 닫으면 설정이 사라집니다.
+
+#### 방법 2: 쉘 설정 파일에 영구 설정
+**zsh 사용자 (.zshrc):**
+```bash
+echo 'export PUBLIC_DATA_API_SECRET="발급받은_API_키를_여기에_입력"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**bash 사용자 (.bashrc):**
+```bash
+echo 'export PUBLIC_DATA_API_SECRET="발급받은_API_키를_여기에_입력"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+설정 후 다음 명령어로 환경변수가 제대로 설정되었는지 확인할 수 있습니다:
+```bash
+echo $PUBLIC_DATA_API_SECRET
 ```
 
 ### Claude Desktop에서 사용하기
