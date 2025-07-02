@@ -23,13 +23,13 @@ Google Custom Search API를 사용하여 검색하고 각 결과의 웹페이지
    - [Google Custom Search Engine](https://cse.google.com/cse/)에 접속
    - "추가" 클릭
    - 검색엔진 이름 입력, 검색할 내용에서 "전체 웹 검색" 선택 후 "만들기" 클릭
-   - 만든 검색엔지 개요의 기본에서 "검색엔진 ID" 복사
+   - 만든 검색엔진 개요의 기본에서 "검색엔진 ID" 복사
 
-3. **코드에 API 정보 설정**
-   ```python
-   # google_search.py 파일에서 다음 부분 수정
-   API_KEY = "YOUR_API_KEY_HERE"
-   SEARCH_ENGINE_ID = "YOUR_SEARCH_ENGINE_ID_HERE"
+3. **환경변수로 API 정보 설정**
+   ```bash
+   # 환경변수 설정 (터미널에서) 또는 쉘 설정 파일 (.zshrc, .bashrc 등) 
+   export GOOGLE_CLOUD_API_KEY="your_api_key_here"
+   export GOOGLE_CUSTOM_SEARCH_ENGINE_ID="your_search_engine_id_here"
    ```
 
 ## 설치
@@ -49,22 +49,38 @@ cd google_search
 uv sync
 ```
 
-## q CLI에서 MCP 서버 등록
+## 사용법
+
+### 환경변수 설정
+사용하기 전에 반드시 환경변수를 설정해야 합니다:
+
+```bash
+# 방법 1: 터미널에서 직접 설정
+export GOOGLE_CLOUD_API_KEY="your_api_key_here"
+export GOOGLE_CUSTOM_SEARCH_ENGINE_ID="your_search_engine_id_here"
+
+# 방법 2: ~/.zshrc 또는 ~/.bashrc에 추가 (영구 설정)
+echo 'export GOOGLE_CLOUD_API_KEY="your_api_key_here"' >> ~/.zshrc
+echo 'export GOOGLE_CUSTOM_SEARCH_ENGINE_ID="your_search_engine_id_here"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### q CLI에서 MCP 서버로 사용
 
 **mcp.json 설정**
 ```json
 {
     "mcpServers": {
         "google-search": {
-        "command": "uv 절대 경로",
-        "args": [
-            "--directory",
-            "google_search.py 가 위치한 디렉토리의 절대경로 입력",
-            "run",
-            "google_search.py"
-        ],
-        "disabled": false
-    }
+            "command": "uv 절대 경로",
+            "args": [
+                "--directory",
+                "google_search.py 가 위치한 디렉토리의 절대경로 입력",
+                "run",
+                "google_search.py"
+            ],
+            "disabled": false
+        }
     }
 }
 ```
@@ -94,10 +110,18 @@ uv sync
 
 ## 문제 해결
 
-### 일반적인 오류
-1. **API 키 오류**: API 키가 올바르게 설정되었는지 확인
-2. **검색엔진 ID 오류**: Custom Search Engine ID가 올바른지 확인
-3. **할당량 초과**: API 사용량이 일일 한도를 초과했는지 확인
+1. **환경변수 미설정**: `GOOGLE_CLOUD_API_KEY` 또는 `GOOGLE_CUSTOM_SEARCH_ENGINE_ID` 환경변수가 설정되지 않음
+   ```bash
+   # 환경변수 확인
+   echo $GOOGLE_CLOUD_API_KEY
+   echo $GOOGLE_CUSTOM_SEARCH_ENGINE_ID
+   ```
+
+2. **API 키 오류**: API 키가 올바르게 설정되었는지 확인
+3. **검색엔진 ID 오류**: Custom Search Engine ID가 올바른지 확인
+4. **할당량 초과**: API 사용량이 일일 한도를 초과했는지 확인
+
+
 
 ## 라이선스
 

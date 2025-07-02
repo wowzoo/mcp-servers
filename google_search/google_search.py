@@ -5,11 +5,13 @@ Google Search MCP Server using FastMCP with Google Custom Search API
 
 import logging
 import time
-from typing import Any, Dict, List
+import os
 import requests
-from bs4 import BeautifulSoup
 
+from typing import Any, Dict, List
+from bs4 import BeautifulSoup
 from fastmcp import FastMCP
+
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO)
@@ -19,8 +21,8 @@ logger = logging.getLogger("google-search-mcp")
 app = FastMCP("google-search-mcp")
 
 # Google Custom Search API 설정
-API_KEY = "YOUR_API_KEY_HERE"
-SEARCH_ENGINE_ID = "YOUR_SEARCH_ENGINE_ID_HERE"
+API_KEY = os.environ.get("GOOGLE_CLOUD_API_KEY")
+SEARCH_ENGINE_ID = os.environ.get("GOOGLE_CUSTOM_SEARCH_ENGINE_ID")
 
 class GoogleSearcher:
     """Google Custom Search API를 사용한 검색 클래스"""
