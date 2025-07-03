@@ -63,7 +63,7 @@ source ~/.zshrc
 ```json
 {
     "mcpServers": {
-        "google-search": {
+        "geocoder": {
             "command": "uv 절대 경로",
             "args": [
                 "--directory",
